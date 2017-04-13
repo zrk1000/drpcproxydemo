@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="ISO-8859-1">
+    <file url="file://$PROJECT_DIR$/service/src/main/java/com/zrk1000/drcp/model/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service/src/main/java/com/zrk1000/drcp/serviceimpl/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/serviceimpl/src/main/java/com.zrk1000.drcp/model/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/serviceimpl/src/main/java/com.zrk1000.drcp/serviceimpl/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/serviceimpl/src/main/java/com.zrk1000.drcp/serviceimpl/UserServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/src/main/java/com.zrk1000.drcp/Application.java" charset="UTF-8" />
+    <file url="PROJECT" charset="ISO-8859-1" />
+  </component>
+</project>
