@@ -8,7 +8,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>service.impl</artifactId>
 
     <dependencies>
@@ -28,9 +27,10 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

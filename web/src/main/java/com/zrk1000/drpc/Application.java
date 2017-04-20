@@ -2,6 +2,7 @@ package com.zrk1000.drpc;
 
 
 import com.zrk1000.drpc.model.User;
+import com.zrk1000.drpc.rpc.drpc.StormRemoteDrpcHandle;
 import com.zrk1000.drpc.serviceimpl.UserService;
 import com.zrk1000.drpc.annotation.ServiceScan;
 import com.zrk1000.drpc.rpc.RpcHandle;
@@ -13,6 +14,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,24 +23,18 @@ import org.springframework.web.bind.annotation.RestController;
 //@MapperScan("com.zrk1000.proxytest.mapper")
 //@ImportResource("spring/spring-context.xml")
 //@ComponentScan("")
-//@ServiceScan(basePackages = "com.zrk1000.drpc.serviceimpl",rpcHandleBeanRef="stormLocalDrpcHandle")
 @RestController
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(Application.class, args);
+		System.out.println(applicationContext.getBean("stormDrpcHandle"));
 	}
 
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Application.class);
 	}
-
-//	@Bean("stormLocalDrpcHandle")
-//	public RpcHandle getRpcHandle(){
-//		StormLocalDrpcHandle drpcHandle = new StormLocalDrpcHandle();
-//		return  drpcHandle;
-//	}
 
 	@Autowired
 	private UserService userService;
