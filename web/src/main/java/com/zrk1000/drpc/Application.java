@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@MapperScan("com.zrk1000.proxytest.mapper")
 //@ImportResource("spring/spring-context.xml")
 //@ComponentScan("")
-@ServiceScan(basePackages = "com.zrk1000.drpc.serviceimpl",rpcHandleBeanRef="stormLocalDrpcHandle")
+//@ServiceScan(basePackages = "com.zrk1000.drpc.serviceimpl",rpcHandleBeanRef="stormLocalDrpcHandle")
 @RestController
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
@@ -34,11 +34,11 @@ public class Application extends SpringBootServletInitializer {
 		return application.sources(Application.class);
 	}
 
-	@Bean("stormLocalDrpcHandle")
-	public RpcHandle getRpcHandle(){
-		StormLocalDrpcHandle drpcHandle = new StormLocalDrpcHandle();
-		return  drpcHandle;
-	}
+//	@Bean("stormLocalDrpcHandle")
+//	public RpcHandle getRpcHandle(){
+//		StormLocalDrpcHandle drpcHandle = new StormLocalDrpcHandle();
+//		return  drpcHandle;
+//	}
 
 	@Autowired
 	private UserService userService;
