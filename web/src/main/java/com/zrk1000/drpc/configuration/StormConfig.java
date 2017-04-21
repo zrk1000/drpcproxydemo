@@ -27,6 +27,7 @@ import java.util.Set;
 public class StormConfig {
 
     @Profile("local")
+    @Scope("singleton")
     @Bean("stormDrpcHandle")
     public RpcHandle getStormLocalRpcHandle(){
         StormLocalDrpcHandle drpcHandle = new StormLocalDrpcHandle();
