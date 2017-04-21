@@ -29,8 +29,63 @@
             <artifactId>drpc.proxy</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <profiles.active>local</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>local dev</id>
+            <properties>
+                <profiles.active>local dev</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>remote test</id>
+            <properties>
+                <profiles.active>remote test</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>remote dev</id>
+            <properties>
+                <profiles.active>remote dev</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>remote prod</id>
+            <properties>
+                <profiles.active>remote prod</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>rely test</id>
+            <properties>
+                <profiles.active>rely test</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>rely tdev</id>
+            <properties>
+                <profiles.active>rely dev</profiles.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
     <build>
+        <finalName>web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -40,7 +95,7 @@
                     <archive>
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                         </manifest>
                     </archive>
                 </configuration>
