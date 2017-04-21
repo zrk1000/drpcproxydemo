@@ -12,6 +12,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Scope;
 
 import java.io.IOException;
 import java.util.Map;
@@ -55,6 +56,7 @@ public class StormConfig {
 
 
     @Profile("remote")
+    @Scope("singleton")
     @Bean("stormDrpcHandle")
     public RpcHandle getStormRemoteRpcHandle(GenericObjectPoolConfig poolConfig,DrpcClientConfig clientConfig,SpoutMapping spoutMapping){
         Config config = new Config();
