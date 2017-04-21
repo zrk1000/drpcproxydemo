@@ -7,6 +7,8 @@ import com.zrk1000.drpc.serviceimpl.UserService;
 import com.zrk1000.drpc.annotation.ServiceScan;
 import com.zrk1000.drpc.rpc.RpcHandle;
 import com.zrk1000.drpc.rpc.drpc.StormLocalDrpcHandle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+
 
 //@MapperScan("com.zrk1000.proxytest.mapper")
 //@ImportResource("spring/spring-context.xml")
@@ -26,10 +30,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
-	
+	protected static final Logger logger = LoggerFactory.getLogger(Application.class);
+
 	public static void main(String[] args) {
-		ConfigurableApplicationContext applicationContext = SpringApplication.run(Application.class, args);
-		System.out.println(applicationContext.getBean("stormDrpcHandle"));
+		ConfigurableApplicationContext ctx = SpringApplication.run(Application.class, args);
+		String[] profiles = ctx.getEnvironment().getActiveProfiles();
+		logger.info("spring BOOT profiles:" + Arrays.toString(profiles));
 	}
 
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {

@@ -38,49 +38,46 @@
 
     <profiles>
         <profile>
-            <id>local</id>
+            <id>pattern-local</id>
             <properties>
-                <profiles.active>local</profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>local dev</id>
-            <properties>
-                <profiles.active>local dev</profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>remote test</id>
-            <properties>
-                <profiles.active>remote test</profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>remote dev</id>
-            <properties>
-                <profiles.active>remote dev</profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>remote prod</id>
-            <properties>
-                <profiles.active>remote prod</profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>rely test</id>
-            <properties>
-                <profiles.active>rely test</profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>rely tdev</id>
-            <properties>
-                <profiles.active>rely dev</profiles.active>
+                <profiles.pattern>local</profiles.pattern>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+        </profile>
+        <profile>
+            <id>pattern-remote</id>
+            <properties>
+                <profiles.pattern>remote</profiles.pattern>
+            </properties>
+        </profile>
+        <profile>
+            <id>pattern-rely</id>
+            <properties>
+                <profiles.pattern>rely</profiles.pattern>
+            </properties>
+        </profile>
+        <profile>
+            <id>env-dev</id>
+            <properties>
+                <profiles.env>dev</profiles.env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>env-test</id>
+            <properties>
+                <profiles.env>test</profiles.env>
+            </properties>
+        </profile>
+        <profile>
+            <id>env-prod</id>
+            <properties>
+                <profiles.env>prod</profiles.env>
+            </properties>
         </profile>
     </profiles>
 
