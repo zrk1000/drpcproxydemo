@@ -57,7 +57,7 @@ public class StormConfig {
 
 
     @Profile("remote")
-    @Scope("singleton")
+//    @Scope("singleton")
     @Bean("stormDrpcHandle")
     public RpcHandle getStormRemoteRpcHandle(GenericObjectPoolConfig poolConfig,DrpcClientConfig clientConfig,SpoutMapping spoutMapping){
         Config config = new Config();
