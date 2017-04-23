@@ -13,6 +13,7 @@
     <groupId>com.zrk1000.drpc</groupId>
     <artifactId>web</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
