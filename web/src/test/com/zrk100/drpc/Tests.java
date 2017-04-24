@@ -12,8 +12,8 @@ public class Tests {
 
     public static void main(String[] args) throws TException {
         Config config = new Config();
-        DRPCClient client = new DRPCClient(config, "120.26.134.96", 3772, 10);
-        String testTopology = client.execute("testTopology", "");
+        DRPCClient client = new DRPCClient(config, "localhost", 49772, 10);
+        String testTopology = client.execute("testTopology", "{\"interfaceClazz\":\"com.zrk1000.drpc.serviceimpl.UserService\",\"method\":\"getUser\",\"methodHashCode\":-1910929195,\"params\":[\"tom\"]}");
         System.out.println(testTopology);
     }
 }
